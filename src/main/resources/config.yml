@@ -1,0 +1,3 @@
+baseUrl:
+  stage: https://www.google.com
+  prod: https://www.google.com

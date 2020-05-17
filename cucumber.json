@@ -1,0 +1,106 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-05-17T04:11:58.122Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2860000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "support.Hooks.init()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Search a keywords",
+        "description": "",
+        "id": "search;search-a-keywords",
+        "after": [
+          {
+            "result": {
+              "duration": 99000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "support.Hooks.takeScreenshot(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1518000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user visit homepage",
+            "match": {
+              "location": "steps.HomePageSteps.launchHomePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 272000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "input \u0027music\u0027 in search bar",
+            "match": {
+              "arguments": [
+                {
+                  "val": "music",
+                  "offset": 7
+                }
+              ],
+              "location": "steps.HomePageSteps.inputKeywordsInSearchBar(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1651000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "click search btn",
+            "match": {
+              "location": "steps.HomePageSteps.clickSearchBtn()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 308000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "search results contains \u0027music\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "music",
+                  "offset": 25
+                }
+              ],
+              "location": "steps.HomePageSteps.checkSearchResults(java.lang.String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Search",
+    "description": "  As a user\n  I want to get result with my keywords",
+    "id": "search",
+    "keyword": "Feature",
+    "uri": "classpath:features/search.feature",
+    "tags": []
+  }
+]

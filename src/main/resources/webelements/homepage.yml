@@ -1,0 +1,6 @@
+searchInput:
+  cssSelector: input[role='combobox']
+searchBtn:
+  cssSelector: input[name='btnK']
+searchResults:
+  cssSelector: div[id='search']>div>div>div
