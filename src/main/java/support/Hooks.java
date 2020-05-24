@@ -42,7 +42,8 @@ public class Hooks {
                 scenario.write("Current Page URL is " + driver.getCurrentUrl());
                 byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
                 try {
-                    Files.write(Paths.get(scenario.getName().toLowerCase().replace(" ","_") + "_" + new Date().getTime() + ".png"), screenshot);
+                    Files.write(Paths.get(scenario.getName().toLowerCase().replace(" ","_")
+                            + "_" + new Date().getTime() + ".png"), screenshot);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
