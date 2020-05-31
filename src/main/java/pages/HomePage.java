@@ -7,6 +7,10 @@ import java.util.Map;
 
 public class HomePage extends Page {
 
+    public HomePage() {
+        super("googleBaseUrl");
+    }
+
     /**
      * Input a keywords in homepage search bar.
      * @param keywords keywords

@@ -1,3 +1,7 @@
-baseUrl:
+googleBaseUrl:
   stage: https://www.google.com
   prod: https://www.google.com
+
+mallBaseUrl:
+  stage: http://automationpractice.com/index.php
+  prod: http://automationpractice.com/index.php

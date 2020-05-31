@@ -1,0 +1,22 @@
+productItems:
+  xpath: //ul[@id='homefeatured']//div[@class='product-container']
+productName:
+  cssSelector: .product-name
+addToCartBtn:
+  cssSelector: .ajax_add_to_cart_button
+cartQuantity:
+  cssSelector: .ajax_cart_quantity
+shoppingCart:
+  cssSelector: .shopping_cart>a
+checkoutBtn:
+  cssSelector: .cart-buttons
+proceedToCheckoutBtn:
+  cssSelector: .standard-checkout
+email:
+  id: email
+password:
+  id: passwd
+loginBtn:
+  id: SubmitLogin
+currentStep:
+  cssSelector: .step_current

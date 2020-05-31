@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import support.Driver;
 import support.Utility;
 
@@ -26,9 +27,10 @@ public class Page {
 
     /**
      * Page constructor to set base url and locators.
+     * @param project project
      */
-    Page() {
-        setBaseUrl();
+    Page(String project) {
+        setBaseUrl(project);
         setLocators();
     }
 
@@ -41,7 +43,7 @@ public class Page {
 
     /**
      * Open the web page of base url and endpoint.
-     * @param endpoint
+     * @param endpoint endpoint
      */
     public void launch(String endpoint) {
         driver.get(baseUrl + endpoint);
@@ -52,12 +54,13 @@ public class Page {
      * platform define a environment to run tests like stage or prod.
      * locale define a language to run tests like zh-cn, en-gb...
      * The base url is define in config.yml file.
+     * @param projectBaseUrl projectBaseUrl
      */
-    private void setBaseUrl() {
+    private void setBaseUrl(String projectBaseUrl) {
         String platform = System.getProperty("platform");
         String locale = System.getProperty("locale");
         Map<String, Object> config = Utility.fetchYmlFile(CONFIG_FILE);
-        Map<String, String> base = (Map<String, String>)config.get("baseUrl");
+        Map<String, String> base = (Map<String, String>)config.get(projectBaseUrl);
         baseUrl = base.get(platform == null ? "stage" : "prod") + (locale == null ? "" : "/" + locale);
     }
 
@@ -110,7 +113,7 @@ public class Page {
      * @param name element name
      * @return by
      */
-    private By getBy(String name) {
+    public By getBy(String name) {
         Map<String, String> locatorValue = (Map<String, String>) locators.get(name);
         String methodName = null;
         String methodValue = null;
@@ -161,5 +164,13 @@ public class Page {
         } else {
             throw new IllegalStateException("This driver does not support JavaScript!");
         }
+    }
+
+    /**
+     * Get action
+     * @return selenium interaction
+     */
+    public Actions getAction() {
+        return new Actions(driver);
     }
 }

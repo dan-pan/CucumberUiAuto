@@ -5,6 +5,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Provide a web driver.
  */
@@ -29,5 +31,6 @@ public class Driver {
             System.out.println("Unknown driver type (" + type + ").");
             System.exit(1);
         }
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
 }
