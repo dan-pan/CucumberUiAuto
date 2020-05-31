@@ -26,11 +26,11 @@ public class MallHomePage extends Page {
                         3000,
                         "add to cart button is not displayed");
                 item.findElement(getBy("addToCartBtn")).click();
-//                try {
-//                    Thread.sleep(1000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 closeCartModel();
             }
         }
